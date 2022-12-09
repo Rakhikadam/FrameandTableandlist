@@ -8,12 +8,14 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Facebook_singup extends AppCompatActivity {
     //AutoCompleteTextView and progressDialog example
-    AutoCompleteTextView email;       //Intalize edittext
+    AutoCompleteTextView email;
+    //Intalize edittext
     List<String> list;                //add string ist
     ProgressDialog progressDialog;    //Intalize progressDialog
     @Override
@@ -30,7 +32,12 @@ public class Facebook_singup extends AppCompatActivity {
         list.add("Tejas");
         list.add("abhishekh");
 
-      //  List<String> list1 = new ArrayList<>();
+        try {
+            getResources().getAssets().open("ARIA.TTF");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //  List<String> list1 = new ArrayList<>();
      //   list1.addAll(list);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(Facebook_singup.this, android.R.layout.simple_list_item_1, list);
         email = findViewById(R.id.email);

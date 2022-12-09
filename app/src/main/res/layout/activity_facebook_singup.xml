@@ -17,13 +17,14 @@
         ></TextView>
 
 
-    <TextView
+    <com.example.myapplication.ArialTextview
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="It's free and always will be "
        android:textSize="20sp"
+        app:textviewattr="1"
         style="@style/CardView.Dark"
-        ></TextView>
+        ></com.example.myapplication.ArialTextview>
 
     <LinearLayout
         android:layout_width="match_parent"
