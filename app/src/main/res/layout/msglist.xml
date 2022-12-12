@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+    <ImageView
+        android:id="@+id/imagec"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_action_profile"
+        ></ImageView>
+
+    <TextView
+        android:id="@+id/namemsg"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="AAAAAAAAAA"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        ></TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/msg"
+            android:id="@+id/msg"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            ></ImageView>
+        <ImageView
+            android:id="@+id/call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/call"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            ></ImageView>
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/nmbermsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8888888888"
+        android:paddingLeft="70dp"></TextView>
+
+
+<TextView
+        android:id="@+id/gmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rakhi@gmai.com"
+        android:paddingLeft="70dp"></TextView>
+
+
+
+
+</LinearLayout>

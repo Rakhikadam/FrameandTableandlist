@@ -33,24 +33,14 @@ public class PhonecallActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.textc);
         TextView textView1 = findViewById(R.id.nmbercall);
         List<callList>list = new ArrayList<>();
-        callList user1 = new callList("https://images.unsplash.com/photo-1611068813580-b07ef920964b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80","AAAAAAAAA",888);
+        callList user1 = new callList("https://images.unsplash.com/photo-1611068813580-b07ef920964b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80","AAAAAAAAA",888888);
         list.add(user1);
         PhoneAdpter adpter = new PhoneAdpter(list);
         listView.setAdapter(adpter);
 
-
-        imagecall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent  = new Intent(Intent.ACTION_CALL);
-                String number = textView1.getText().toString();
-                intent.setData(Uri.parse("tel:"+number));
-                startActivity(intent);
-            }
-        });
-
-
     }
+
+
     class PhoneAdpter extends BaseAdapter{
         List<callList>list1;
         public PhoneAdpter(List<callList> list) {
@@ -75,13 +65,24 @@ public class PhonecallActivity extends AppCompatActivity {
 
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
+            ImageView imagecall = findViewById(R.id.imagecall);
+            imagecall.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent  = new Intent(Intent.ACTION_CALL);
+                    intent.setData(Uri.parse("tel:"+list1.get(i).getNumber()));
+                    startActivity(intent);
+                }
+            });
+
+
             View ABC = LayoutInflater.from(PhonecallActivity.this).inflate(R.layout.phone_call_list,viewGroup,false);
             ImageView imageView = ABC.findViewById(R.id.imagec);
             Glide.with(PhonecallActivity.this).load(list1.get(i).getProfile()).into(imageView);
             TextView textView = ABC.findViewById(R.id.textc);
             textView.setText(list1.get(i).getName());
-            TextView textView1 = ABC.findViewById(R.id.nmbercall);
-            textView1.setText(list1.get(i).getNumber());
+           // TextView textView1 = ABC.findViewById(R.id.nmbercall);
+            //textView1.setText(list1.get(i).getNumber());
             return ABC;
         }
     }
